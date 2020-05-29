@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+    <title>Flask app</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+ 
+  </head>
+
+  <body style="background-color:wheatc;">
+ <div class="ultimate-bg container"> 
+  {% extends 'layout.html' %}
+
+  {% block body %}
+
+  <div class="jumbotron">
+    <img src="{{ url_for('static', filename='dairy.jpg') }}" alt="Simply Easy Learning" width=100%; >
+    <h2>Create Dairy Entries On The Go.</h2>
+
+  </div>
+
+</div> 
+
+</body>
+{% endblock %}
+</html>

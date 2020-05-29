@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <div class="w3-show-inline-block">
+      <div class="w3-bar">
+        <h1>Dairy Entries</h1>
+      
+        <!-- <button type="submit" class="btn btn-outline-secondary">Add new post</button> -->
+        <a class="btn btn-default" href="/add_article"> Add new post</a>
+      </div>
+      </div>
+  
+  
+  <hr>
+  <table class="table table-striped">
+    <tr>
+    
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+     {% for article in articles %}
+      <tr>
+  
+        <td>{{  article[1]  }}</td>
+        <td>{{  article[2]  }}</td>
+        <td>{{  article[4]  }}</td>
+        <td><a href="edit_article/{{article[0]}}" class="btn btn-default pull-right">Edit</a></td>
+        <td><form action="{{url_for('delete_article',id=article[0])}}" method="post">
+          <input type="hidden" name="method" value="DELETE">
+          <input type="submit" value="Delete" class="btn btn-default pull-right">
+        </form></td>
+        
+         
+
+    </tr>
+     {% endfor %}
+
+  </table>
+{% endblock %}
